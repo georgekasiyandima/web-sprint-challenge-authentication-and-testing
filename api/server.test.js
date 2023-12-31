@@ -1,6 +1,7 @@
 const request = require("supertest");
 const server = require("./server"); // Assuming your server file is named 'server.js'
 
+
 test("sanity", () => {
   expect(true).toBe(true);
 });
@@ -33,6 +34,7 @@ describe("API Endpoints", () => {
     it("should return an error when the username is taken", async () => {
       const response = await request(server).post("/api/auth/register").send({
         username: "existinguser",
+        username: "testuser",
         password: "testpassword",
       });
 
